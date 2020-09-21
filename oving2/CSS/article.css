@@ -1,0 +1,52 @@
+article {
+    width: 75ch;
+    margin: auto;
+    font-family: Verdana, Georgia;
+    line-height: 1.5em;
+    font-size: 18px;
+
+}
+
+img {
+  width: 75ch;
+  height: auto;
+}
+
+
+body {
+    background-color: #D3D3D3;
+    color:#323232;
+
+}
+
+h1 {
+    font-size: 22px;
+    margin-top: -2;
+    margin-bottom: 0;
+    line-height: 0;
+}
+#p1 {
+  border-bottom: 2px solid black;
+
+}
+
+h2 {
+    font-size: 22px;
+
+}
+
+
+#facts {
+    margin: auto;
+    width: 75ch;
+    border: 1px dashed;
+    float: right;
+
+}
+
+#facts > ul {
+    list-style-image: url('cup-icon.svg');
+    line-height: 1.5em;
+    padding-left: 1.5em;
+
+}
