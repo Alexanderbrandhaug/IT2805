@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax form</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <form action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+          Real name:<br>
+          <input type="text" name="name" required><br>
+          Gender:<br>
+          <input type="radio" name="gender" value="male" checked>Male<br>
+          <input type="radio" name="gender" value="female">Female<br>
+          <input type="radio" name="gender" value="nonbinary">Nonbinary<br>
+          E-mail:<br>
+          <input type="email" name="email" required><br>
+          Birthdate:<br>
+          <input type="date" name="birthdate"  max="1988-01-01" required><br>
+          Hero name:<br>
+          <input type="text" name="hero" required><br>
+          Income:<br>
+          <input type="number" name= "income" id="income" onchange='Calculate()' min="0" required><br>
+          Wealth:<br>
+          <input type="number" name= "wealth" id="wealth" onchange='Calculate()' min="0" required><br>
+          Tax:<br>
+          <input type="number" name= "tax" id="tax" min="0" value='' disabled><br>
+           Do you wear spandex?<br>
+          <input type="radio" name="spandex" checked> True<br>
+          <input type="radio" name="spandex">False<br>
+          Strength:<br>
+          <input class = "str" type="number" name= "strength" min="1" max="10" required><br>
+          Speed:<br>
+          <input class = "spd" type="number" name="speed" min="1" max="10" required><br>
+          Intelligence:<br>
+          <input class = "int" type="number" name="intelligence" min="1" max="10" required><br>
+          <input type="Submit" value="Submit tax form">
+        </form>
+    </body>
+</html>
