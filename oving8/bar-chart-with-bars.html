@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax forms: Bar chart with lines</title>
+    <meta charset="UTF-8">
+    <script src="taxForms.js"></script>
+  </head>
+  <body>
+    <canvas id="chart" width="700" height="550"></canvas>
+    <script>
+      var red = "#FF0000";
+      var blue = "#0000FF";
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+      /* Draw a line from (fromX, fromY) to (toX, toY) */
+      function drawLine(fromX, fromY, toX, toY) {
+        context.beginPath();
+        context.moveTo(toX, toY);
+        context.lineTo(fromX, fromY);
+        context.stroke();
+      }
+      /* Draw a text (string) on (x, y) */
+      function drawText(text, x, y) {
+        context.fillStyle = 'black';
+        context.fillText(text, x, y);
+      }
+      /* Draw a text and with a line to its right */
+      function drawLineWithText(text, fromX, fromY, toX, toY) {
+        drawText(text, fromX - 50, fromY + 10);
+        drawLine(fromX, fromY, toX, toY);
+      }
+      /* Draw rectangle from x,y to x,y*/
+      function drawRectangle(from_x,from_y,to_x,to_y,color){
+        context.fillStyle = color;
+        context.fillRect(from_x, from_y, to_x-from_x, to_y-from_y);
+      }
+      /*Draw pair of bars*/
+      function drawBars(taxform, offset){
+        var width = 50;
+        var blueoffset = offset+width;
+        var income = taxform.income;
+        var wealth = taxform.wealth;
+        var pxheight_income =  550*Math.floor(1000000-income)/1000000;
+        var pxheight_wealth =  550*Math.floor(1000000-wealth)/1000000;
+
+        drawRectangle(offset,pxheight_income,offset+width,550,red);
+        drawRectangle(blueoffset,pxheight_wealth,blueoffset+width,550,blue);
+      }
+      /* Add lines */
+      for (i = 0; i <11; i++) {
+        drawLineWithText(i*100000,50,550-i*55,550,550-i*55);
+      }
+      /*Add labels*/
+      drawRectangle(600,50,650,75,red);
+      drawText('Income',655,60);
+
+      drawRectangle(600,80,650,105,blue);
+      drawText('Wealth',655,90);
+      /*Add bars*/
+      for(i=0;i<taxForms.length;i++){
+        var offset = 100+i*150;
+        drawBars(taxForms[i],offset);
+      }
+      
+    </script>
+  </body>
+</html>
