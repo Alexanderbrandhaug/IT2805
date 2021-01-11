@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="todo.css">
+    <script src="todo.js"></script>
+    <style>
+      input[type=checkbox]:checked + label{
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+
+  <body>
+    <title>TODO-LIST</title>
+    <h1>TODO</h1>
+    <input type="text" id="textfield" placeholder="Input new task here" autofocus required>
+    <button type="button" onclick="addTask()">Add to TODO</button><br>
+    <p><strong>My completed todos: </strong><span id='completed'>0</span> / <span id='total'>0</span> </p>
+    <h2>TODO list:</h2>
+    <ul id='todolist'></ul>
+  </body>
+</html>
