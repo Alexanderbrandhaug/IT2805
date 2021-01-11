@@ -1,0 +1,35 @@
+
+
+html {
+background-color: grey;
+color: white;
+position: absolute;
+top: 30%;
+left: 40%;
+}
+
+form{
+  border-style: solid;
+
+}
+
+input {
+  color: black;
+  font-style: helvetica;
+  font-weight: bold;
+}
+
+.str{
+  color: red;
+  font-weight:  bold;
+}
+
+.spd{
+  color: green;
+  font-weight: bold;
+}
+
+.int{
+  color: blue;
+  font-weight: bold;
+}
